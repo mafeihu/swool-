@@ -4,7 +4,7 @@
 $serv = new swoole_server('127.0.0.1',9501);
 
 $serv->set(array(
-    'reactor_num' => 8, //worker进程数 cpu1-4
+    'reactor_num' => 4, //worker进程数 cpu1-4
     'max_request' => 1000,
 ));
 
