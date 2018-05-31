@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>singwa-swoole-ws测试</h1>
+    <script src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script>
+        var wsUrl = "ws://192.168.199.136:9912";
+        var websocket = new WebSocket(wsUrl);
+
+        //实例对象的onopen属性
+        websocket.onopen = function (evt) {
+            websocket.send('hello singwa1243');
+            console.log('coneted-swoole-success');
+        }
+        //实例化onmessage
+        websocket.onmessage = function(evt){
+            console.log("ws-server-return-data:"+ evt.data);
+        }
+        //onclose
+        websocket.onclose = function (evt) {
+            console.log("close");
+        }
+
+    </script>
+</body>
+</html>
